@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.app-btn-group {
+  button:nth-child(n+2) {
+    margin-left: 0.5rem;
+  }
+}

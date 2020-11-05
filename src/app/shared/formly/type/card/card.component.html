@@ -1,0 +1,14 @@
+<app-card-tabs [className]="field.templateOptions['className']">
+  <app-card-tab *ngFor="let field of field.fieldGroup; let i = index;"
+                [tabTitle]="field.templateOptions.label">
+    <!-- Use the parent key -->
+    <!--<formly-group
+      [field]="field">
+    </formly-group>-->
+
+    <!-- Allow to not use parent key -->
+    <formly-group
+      [field]="field">
+    </formly-group>
+  </app-card-tab>
+</app-card-tabs>

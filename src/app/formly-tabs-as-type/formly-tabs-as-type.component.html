@@ -1,0 +1,19 @@
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Form with one formly-form and a tabs custom type</h4>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit(model)">
+  <formly-form [form]="form" [fields]="fields" [model]="model">
+    <div class="app-btn-group">
+      <button type="button" class="btn btn-success" (click)="applyModel()">Apply a model</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </formly-form>
+</form>
+
+<div class="row mb-2">
+  <div class="col">
+    <pre class="shadow-none p-3 mt-3 mb-3 bg-light rounded">modelToApply: {{modelToApply | json}}</pre>
+    <pre class="shadow-none p-3 mt-3 mb-3 bg-light rounded">model: {{model | json}}</pre>
+  </div>
+</div>

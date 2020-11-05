@@ -1,0 +1,10 @@
+<div class="card form-group" [ngClass]="className">
+<div class="card-header">
+<ul class="nav nav-tabs card-header-tabs">
+  <li *ngFor="let tab of tabs" (click)="selectTab(tab)" class="nav-item">
+    <a class="nav-link" [ngClass]="[tab.active ? 'active' : '']" [routerLink]="">{{tab.title}}</a>
+  </li>
+</ul>
+</div>
+<ng-content></ng-content>
+</div>

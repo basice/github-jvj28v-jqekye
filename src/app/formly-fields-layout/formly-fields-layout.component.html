@@ -1,0 +1,35 @@
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading">Form with multiple formly-form</h4>
+  <p>Allow to place fields where we want without creating formly custom type.<br/>
+    Doesn't mix design and formly type.</p>
+  <hr>
+  <p class="mb-0">This works only with <strong>Formly 5.x</strong>. With 4.x, the model is mixed up...</p>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit(model)">
+
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+
+  <app-card-tabs [className]="'border-danger'">
+    <app-card-tab [tabTitle]="'Team'">
+      <formly-form [form]="form" [fields]="fieldsTeam" [model]="model"></formly-form>
+    </app-card-tab>
+    <app-card-tab [tabTitle]="'Other'">
+      <formly-form [form]="form" [fields]="fieldsOther" [model]="model"></formly-form>
+    </app-card-tab>
+  </app-card-tabs>
+
+  <formly-form [form]="form" [fields]="fieldsCar" [model]="model"></formly-form>
+
+  <div class="app-btn-group">
+    <button type="button" class="btn btn-success" (click)="applyModel()">Apply a model</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<div class="row mb-2">
+  <div class="col">
+    <pre class="shadow-none p-3 mt-3 mb-3 bg-light rounded">modelToApply: {{modelToApply | json}}</pre>
+    <pre class="shadow-none p-3 mt-3 mb-3 bg-light rounded">model: {{model | json}}</pre>
+  </div>
+</div>
